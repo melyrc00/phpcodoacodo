@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    list-style: none;
+    color: #ffffff;
+}
+
+.nav-princ {
+    background-color:#9f3647 ;
+    color:#ffffff;
+    min-height: 8vh;
+    justify-content: center;
+    line-height: 5rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 40px;
+}
+
+.nav-princ ul {
+    display: flex;
+}
+
+.nav-princ ul li {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.1rem;
+}
+
+.nav-princ a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.nav-princ a:hover {
+    color: #9f3647;
+    background-color: #181419;
+}
+
+#logo-princ:hover{
+    background-color: transparent;
+    color: #000000;
+}
+
+
+nav a p {
+    padding-left: 0.5rem;
+}
+
+
+body {
+    background-color: #181419;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+}
+
+.section-principal {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/banner-bg.jpg);
+    height: 90vh;
+    background-position: center;
+    background-size: cover;
+    opacity: 1.5;
+
+}
+
+.section-principal h1{
+    font-size: 3rem;
+    font-weight: 700;
+
+}
+
+.section-principal h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    border-width: 0;
+    margin-top: 2rem;
+}
+
+button.boton-princ  {
+    background-color: #9f3647;
+}
+
+button.boton-sec  {
+    background-color: #9f3647;
+}
+
+.boton-busc{
+    background-color: #ffffff;
+    width: 30rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    border-width: 0;
+    margin-top: 2rem;
+    margin-right: 1rem;
+}
+
+.section-buscador {
+    height: 40vh;
+    
+}
+
+
+ .section-tendencias article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.section-tendencias article div{
+    width: 30vw;
+
+}
+
+
+.section-aclamadas {
+    height: 80vh;
+
+}
+
+.section-aclamadas article {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.section-aclamadas article  div{
+    height: 20vw;
+}
+
+
+
+
+
+section h2{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+
+footer.nav-princ ul{
+    justify-content: center;
+}

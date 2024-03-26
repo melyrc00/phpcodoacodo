@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="styles-registro.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d7f8f62978.js" crossorigin="anonymous"></script>
+    <title>CAC-MOVIES</title>
+</head>
+<body>
+    <header class="nav-princ">
+        <nav>
+            <a href="index.html" id="logo-princ">
+                <i class="fa-solid fa-film" style="color: #ffffff;"></i>
+                <p>CAC-Movies</p>
+            </a>
+            <ul>
+                <a href="#tendencias"><li>Tendencias</li></a>
+                <a href="registrarse.html"><li>Registrarse</li></a>
+                <a href=""><li>Iniciar sesión</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main id="registro-princ">
+        <form action="">
+            <h2>Registro</h2>
+            <input type="text" name="name" placeholder="Nombre" class="input-registro" required>
+            <input type="text" name="apellido" placeholder="Apellido" class="input-registro" required>
+            <input type="date" name="fecha-nacimiento" class="input-registro" required>
+            <input type="email" name="email" placeholder="Correo" class="input-registro" required>
+            <input type="password" name="password" placeholder="contraseña" size="8" class="input-registro" required>
+            <div class="checkbox">
+            <input type="checkbox" id="terminos" required>
+            <label for="terminos">Acepto términos y condiciones</label>
+            </div>
+            <div class="enviar-form">
+            <button type="submit" class="boton-sec">Registrarse</button>
+            <button type="reset" class="boton-sec">Borrar datos</button>
+            </div>
+        </form>
+    </main>
+    <footer class="nav-princ">
+        <ul>
+            <a href=""><li>Términos y condiciones</li></a>
+            <a href=""><li>Preguntas frecuentes</li></a>
+            <a href=""><li>Ayuda</li></a>
+            <a href=""><li>Administrar peliculas</li></a>
+        </ul>
+    </footer>
+    
+</body>
+</html>
