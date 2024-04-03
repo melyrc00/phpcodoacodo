@@ -20,10 +20,12 @@ nav {
     justify-content: space-between;
     align-items: center;
     margin: 0 40px;
+    flex-wrap: wrap;
 }
 
 .nav-princ ul {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .nav-princ ul li {
@@ -108,7 +110,7 @@ button.boton-sec  {
 
 .boton-busc{
     background-color: #ffffff;
-    width: 30rem;
+    width: 60vw;
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
     font-size: 1.2rem;
@@ -136,10 +138,9 @@ button.boton-sec  {
 }
 
 .section-tendencias article div{
-    height: 400px;
+    height: 600px;
     padding-right: 10px;
     padding-left: 10px;
-    width: 30vw;
 
 }
 
@@ -171,10 +172,10 @@ button.boton-sec  {
 
 }
 
-
+/* 
 .section-aclamadas article div {
-    width: 30vw;
-}
+    height: 80vw;
+} */
 
 .peli-aclamadas {
 
