@@ -122,17 +122,40 @@ button.boton-sec  {
     
 }
 
+.titulos-section {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
 
  .section-tendencias article{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .section-tendencias article div{
+    height: 400px;
+    padding-right: 10px;
+    padding-left: 10px;
     width: 30vw;
 
 }
+
+.section-tendencias article div h3{
+    margin-top: 20px;   
+
+}
+
+.peli-tendencias {
+    height: 80%;
+    border-radius: 20px;
+
+
+}
+
+
 
 
 .section-aclamadas {
@@ -143,12 +166,24 @@ button.boton-sec  {
 .section-aclamadas article {
     display: flex;
     overflow-x: scroll;
+    width: 100%;
+    overflow-y: hidden;
+
 }
 
-.section-aclamadas article  div{
-    height: 20vw;
+
+.section-aclamadas article div {
+    width: 30vw;
 }
 
+.peli-aclamadas {
+
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 80%;
+    border-radius: 20px;
+
+}
 
 
 
@@ -162,3 +197,4 @@ section h2{
 footer.nav-princ ul{
     justify-content: center;
 }
+
