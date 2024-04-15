@@ -32,6 +32,7 @@ h2 {
     color: #181419;
 }
 
+
 .enviar-form {
     display: flex;
     flex-direction: row;
@@ -41,4 +42,24 @@ h2 {
 .checkbox {
     display: flex;
     flex-direction: row;
+    margin-top: 2rem;
+}
+
+
+/* Medium devices (768px and up) */
+
+@media only screen and (min-width: 768px) {
+/* 
+#registro-princ form {
+
+        width: 50vw;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    } */
+
+    .input-registro{
+        width: 50vw;
+
+    }
 }
