@@ -46,6 +46,10 @@ h2 {
 }
 
 
+button {
+    padding: 0.8rem 1rem;
+}
+
 /* Medium devices (768px and up) */
 
 @media only screen and (min-width: 768px) {

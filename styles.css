@@ -32,7 +32,6 @@
 }
 
 .nav-princ ul li {
-    padding: 0.5rem ;
     font-size: 1rem;
 }
 
@@ -42,7 +41,8 @@
     justify-content:center;
     text-decoration: none;
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    padding: 0.5rem ;
     font-weight: 600;
     animation-duration: 2s;
        /* si no le pongo duracion como si fuera kayframe no fucniona  */
