@@ -7,44 +7,49 @@
     color: #ffffff;
 }
 
+
 .nav-princ {
+    /* display: flex; */
     background-color:#9f3647 ;
     color:#ffffff;
-    min-height: 8vh;
+    min-height: 15vh;
     justify-content: center;
-    line-height: 5rem;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 0 40px;
+    padding: 1rem 0 ;
+}
+
+
+#nav-sec{
+    display: flex;
     flex-wrap: wrap;
 }
 
-.nav-princ ul {
+#sec-nav-princ {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 .nav-princ ul li {
-    padding: 0.5rem 1.5rem;
-    font-size: 1.1rem;
+    padding: 0.5rem ;
+    font-size: 1rem;
 }
 
 .nav-princ a {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:center;
     text-decoration: none;
     color: #ffffff;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 600;
+    animation-duration: 2s;
+       /* si no le pongo duracion como si fuera kayframe no fucniona  */
 }
 
 .nav-princ a:hover {
-    color: #9f3647;
+    color: #ffffff;
     background-color: #181419;
 }
 
@@ -74,12 +79,17 @@ section {
 
 .section-principal {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/banner-bg.jpg);
-    height: 90vh;
+    height: 85vh;
     background-position: center;
     background-size: cover;
-    opacity: 1.5;
+    animation-duration: 2s; 
+    /* si no le pongo duracion como si fuera kayframe no fucniona  */
+
+    
 
 }
+
+
 
 .section-principal h1{
     font-size: 3rem;
@@ -135,6 +145,7 @@ button.boton-sec  {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+
 }
 
 .section-tendencias article div{
@@ -151,42 +162,99 @@ button.boton-sec  {
 
 .peli-tendencias {
     height: 80%;
-    border-radius: 20px;
+    border-radius: 15px;
 
+
+}
+
+.peli-tendencias img:hover {
+    box-shadow: 10px 5px 5px #ffffff;
 
 }
 
 
 
-
 .section-aclamadas {
-    height: 80vh;
+    height: 70vh;
+    padding-top: 3rem;
+    width: 80vw;
+    margin: auto;
+    margin-bottom: 2rem;
 
 }
 
 .section-aclamadas article {
     display: flex;
     overflow-x: scroll;
-    width: 100%;
     overflow-y: hidden;
+    scrollbar-color:   #9f3647  #181419;
+    width: 100%;
+    margin-left: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
 
 }
 
-/* 
-.section-aclamadas article div {
-    height: 80vw;
-} */
+
+ .section-aclamadas article img {
+    height: 70%;
+    margin: 0 1rem;
+
+
+} 
+
+@media only screen and (min-width: 768px) {
+
+
+.nav-princ {
+    min-height: 10vh;
+    align-content: center;
+    padding: 0 2rem;
+}
+
+
+
+.nav-princ nav{
+    display: flex;
+    line-height: normal;
+    justify-content: space-between;
+}
+
+#sec-nav-princ {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+
+}
+
+#sec-nav-princ a{
+
+    padding: 0.5rem;
+    
+}
+
+.section-principal {
+    height: 90vh;
+}
+
+.section-aclamadas {
+    padding-top: 2rem;
+    height: 80vh;
+
+}
 
 .peli-aclamadas {
-
-    padding-right: 10px;
-    padding-left: 10px;
     height: 80%;
-    border-radius: 20px;
+    border-radius: 10px;
 
 }
 
 
+.section-aclamadas article img {
+    height: 80%;
+
+
+} 
 
 
 section h2{
@@ -196,6 +264,16 @@ section h2{
 
 
 footer.nav-princ ul{
+    display: flex;
     justify-content: center;
 }
 
+
+footer.nav-princ ul li{
+font-size: 1.1rem;
+font-weight: 500;
+}
+
+
+
+}

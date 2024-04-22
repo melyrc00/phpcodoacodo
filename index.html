@@ -8,24 +8,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d7f8f62978.js" crossorigin="anonymous"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <title>CAC-MOVIES</title>
 </head>
 <body>
     <header class="nav-princ">
         <nav>
-            <a href="index.html" id="logo-princ">
+            <a href="index.html" id="logo-princ" class="animate__swing">
                 <i class="fa-solid fa-film" style="color: #ffffff;"></i>
                 <p>CAC-Movies</p>
             </a>
-            <ul>
-                <a href="#tendencias"><li>Tendencias</li></a>
-                <a href="registrarse.html"><li>Registrarse</li></a>
-                <a href=""><li>Iniciar sesión</li></a>
+            <ul id="sec-nav-princ">
+                <li><a href="#tendencias">Tendencias</a></li>
+                <li><a href="registrarse.html">Registrarse</a></li>
+                <li><a href="">Iniciar sesión</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="section-principal">
+        <section class="section-principal animate__zoomIn" >
             <h1>Películas y series ilimitadas <br>en un solo lugar</h1>
             <h2>Disfruta donde quieras</h2>
             <h2>Cancelá en cualquier momento</h2>
@@ -100,7 +104,7 @@
         </section>
     </main>
     <footer class="nav-princ">
-        <ul>
+        <ul id="sec-nav">
             <a href=""><li>Términos y condiciones</li></a>
             <a href=""><li>Preguntas frecuentes</li></a>
             <a href=""><li>Ayuda</li></a>
