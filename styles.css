@@ -214,6 +214,7 @@ button.boton-sec:hover{
  .section-aclamadas article img {
     height: 70%;
     margin: 0 1rem;
+    border-radius: 15px;
 
 
 } 
