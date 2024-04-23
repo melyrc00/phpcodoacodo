@@ -75,6 +75,8 @@ section {
     justify-content: center;
     color: #ffffff;
     text-align: center;
+    animation-duration: 2s;
+    
 }
 
 .section-principal {
@@ -102,6 +104,7 @@ section {
     font-weight: 400;
 }
 
+
 button {
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
@@ -114,8 +117,19 @@ button.boton-princ  {
     background-color: #9f3647;
 }
 
+button.boton-princ:hover{
+    box-shadow: 2px 2px 5px 2px rgb(41, 41, 41);
+    scale: 90% ;
+}
+
+
 button.boton-sec  {
     background-color: #9f3647;
+}
+
+button.boton-sec:hover{
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 1);
+    scale: 90% ;
 }
 
 .boton-busc{
@@ -167,8 +181,9 @@ button.boton-sec  {
 
 }
 
-.peli-tendencias img:hover {
-    box-shadow: 10px 5px 5px #ffffff;
+.peli-tendencias:hover,.peli-aclamadas:hover {
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 1);
+    scale: 90% ;
 
 }
 
