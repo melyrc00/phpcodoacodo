@@ -14,16 +14,18 @@ h2 {
 #registro-princ form {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    width: 80vw;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    width: 40vw;
     align-content: center;
     margin: 80px 20px;
+    animation-duration: 2s; 
 
 }
 
 .input-registro{
     background-color: #ffffff;
-    width: 80vw;
+    /* width: 80vw; */
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
     font-size: 1.2rem;
@@ -48,6 +50,7 @@ h2 {
 
 button {
     padding: 0.8rem 1rem;
+    width: 100%;
 }
 
 /* Medium devices (768px and up) */
@@ -63,7 +66,7 @@ button {
     } */
 
     .input-registro{
-        width: 50vw;
+        /* width: 50vw; */
 
     }
 }
