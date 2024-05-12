@@ -16,9 +16,15 @@ h2 {
     flex-direction: column;
     /* flex-wrap: wrap; */
     justify-content: center;
-    width: 40vw;
+    width: 90vw;
     align-content: center;
     margin: 80px 20px;
+    padding: 32px;
+    /* border: #4e4e4e;
+    box-sizing: 0,2px;
+    border-style: solid;
+    border-radius: 6px; */
+    background-color: #2b2a2a;
     animation-duration: 2s; 
 
 }
@@ -65,8 +71,8 @@ button {
         align-items: center;
     } */
 
-    .input-registro{
-        /* width: 50vw; */
+    #registro-princ form {
+        width: 40vw;
 
     }
 }
