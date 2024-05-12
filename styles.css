@@ -46,7 +46,8 @@
     text-decoration: none;
     color: #ffffff;
     font-size: 1rem;
-    padding: 0.5rem ;
+    margin: 0.5rem ;
+    padding: 0.5rem;
     font-weight: 600;
     animation-duration: 2s;
        /* si no le pongo duracion como si fuera kayframe no fucniona  */
@@ -55,6 +56,13 @@
 .nav-princ a:hover {
     color: #ffffff;
     background-color: #181419;
+    border-radius: 5px;
+    /* font-weight: 800;
+    color:#181419 ;
+    border-bottom: #181419;
+    border-bottom-style: solid;
+    border-bottom-width: medium%; */
+
 }
 
 #logo-princ:hover{
@@ -132,8 +140,11 @@ button.boton-sec  {
 }
 
 button.boton-sec:hover{
-    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 1);
-    scale: 90% ;
+    /* box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 1);
+    scale: 90% ; */
+    background-color: #cea140;
+    color: #181419 ;
+    font-weight: 800;
 }
 
 .boton-busc{
