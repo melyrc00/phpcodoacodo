@@ -207,8 +207,9 @@ button.boton-sec:hover{
 .section-aclamadas {
     height: 70vh;
     padding-top: 3rem;
-    width: 80vw;
-    margin: auto;
+    /* width: 90vw; */
+    margin-left: 1rem;
+    margin-right: 1rem;
     margin-bottom: 2rem;
 
 }
