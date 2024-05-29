@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d7f8f62978.js" crossorigin="anonymous"></script>
+
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -32,8 +33,8 @@
         <form action="" class="animate__zoomIn">
             <h2>Iniciar sesión</h2>
 
-            <input type="email" name="email" placeholder="Correo" class="input-registro" required>
-            <input type="password" name="password" placeholder="contraseña" size="8" class="input-registro" required>
+            <input type="email" name="email" placeholder="Correo" class="input-registro" id="email">
+            <input type="password" name="password" placeholder="contraseña" size="8" class="input-registro" id="password">
             <div class="enviar-form">
             <button type="submit" class="boton-sec">Iniciar sesión</button>
             </div>
@@ -49,6 +50,10 @@
             <a href=""><li>Administrar peliculas</li></a>
         </ul>
     </footer>
-    
+
+<script src="validar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 </body>
 </html>
