@@ -19,27 +19,30 @@ let a =inputEmail.value
 let b=inputPassword.value
 
 
-if(a==='' && b===''){
+if(a ==='' || b ===''){
 
-    alert("el formulario esta vacio")
+    
     Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "Something went wrong!",
+        title: "El formulario esta vacío",
+        text: "Por favor verifica los campos",
       });
     e.preventDefault()
-}
-
-    else {
-        // alert("el formulario ha sido enviado")
+    } 
+else {
         Swal.fire({
-            title: "Good job!",
-            text: "You clicked the button!",
-            icon: "success"
-          });
+        title: "",
+        text: "El formulario ha sido envíado",
+        icon: "success",
+     })
+         
 
-    }
 
+         console.log("el formulario ha sido envíado");
+        
+
+
+        }
 
 })
 
