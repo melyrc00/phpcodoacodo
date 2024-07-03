@@ -45,13 +45,11 @@ echo "<br>";
 
 // Mostrar datos del usuario recién registrado
 if (isset($_GET['id'])) {
-    // Obtener el ID del usuario registrado desde la URL
+    // Obtener el ID del usuario 
     $id_usuario = $_GET['id'];
 
-    // Consulta para obtener los datos del usuario registrado
     $consulta = mysqli_query($conexion, "SELECT * FROM usuarios WHERE id_usuarios = '$id_usuario'");
 
-    // Verificar si la consulta fue exitosa
     if ($consulta) {
         $lista = mysqli_fetch_assoc($consulta);
     } else {
@@ -60,7 +58,6 @@ if (isset($_GET['id'])) {
     }
 } 
 
-// Cerrar conexión a la base de datos
 mysqli_close($conexion);
 ?>
 
