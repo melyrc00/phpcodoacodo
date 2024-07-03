@@ -28,19 +28,25 @@
         </nav>
     </header>
     <main id="registro-princ">
-        <form action="reciberegistro.php" class="animate__zoomIn" id="form_reg" method="post">
-            <h2>Registro</h2>
-            <input type="text" name="name" placeholder="Nombre" class="input-registro" required>
-            <input type="text" name="apellido" placeholder="Apellido" class="input-registro" required>
-            <input type="date" name="fecha-nacimiento" class="input-registro" required>
-            <input type="email" name="email" placeholder="Correo" class="input-registro" required>
-            <input type="password" name="password" placeholder="contraseña" size="8" class="input-registro" required>
-            <!-- <div class="checkbox"> -->
-            <!-- <input type="checkbox" id="terminos" required> -->
-            <!-- <label for="terminos" class="label-registro">Acepto términos y condiciones</label>
-            </div> -->
+        <form action="recibedatospeliculas.php" method="post"class="animate__zoomIn"  id="form_reg">
+            <h2>Registro de peliculas</h2>
+            <input type="text" id="titulopelicula" name="titulopelicula" placeholder="Titulo" class="input-registro" max="30" required>
+            <textarea type="text" id="descripcion" name="descripcion" placeholder="Descripción" rows="4" class="input-registro" required></textarea>
+            <input type="text" id="genero" name="genero" class="input-registro" required placeholder="Genero" max="30">
+            <input type="number" id="calificacion" name="calificacion" placeholder="Calificación" class="input-registro" min="1" max="5" required>
+            <input type="number"  id="aniopelicula" name="aniopelicula" placeholder="Año pelicula" size="8" class="input-registro" required>
+            <select class="input-registro" name="director">
+                <option selected>Director</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <div class="checkbox">
+            <input type="checkbox" id="terminos" required>
+            <label for="terminos" class="label-registro">Acepto términos y condiciones</label>
+            </div>
             <div class="enviar-form">
-            <button href="reciberegistro.php" type="submit" class="boton-sec">Registrarse</button> 
+            <button type="submit" class="boton-sec">Guardar pelicula</button>
 
             </div>
         </form>
@@ -50,7 +56,7 @@
             <a href=""><li>Términos y condiciones</li></a>
             <a href=""><li>Preguntas frecuentes</li></a>
             <a href=""><li>Ayuda</li></a>
-            <a href="administrar.html"><li>Administrar peliculas</li></a>
+            <a href=""><li>Administrar peliculas</li></a>
         </ul>
     </footer>
 

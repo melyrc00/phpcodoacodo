@@ -1,0 +1,43 @@
+/* Estilos personalizados para SweetAlert */
+.swal2-icon.swal2-error  {
+    border-color: #9f3647;
+}
+
+.swal2-icon.swal2-success, .swal2-iconColor  {
+  border-color: #9f3647;
+}
+
+
+
+.swal2-icon.swal2-error .swal2-x-mark-line-left, .swal2-icon.swal2-error .swal2-x-mark-line-right{
+background-color: #9f3647;
+}
+
+.swal2-icon.swal2-success.swal2-x-mark-line-left, .swal2-icon.swal2-success .swal2-x-mark-line-right{
+  background-color: #9f3647;
+  }
+  
+
+
+.swal2-popup {
+    font-family:'Nunito', sans-serif;
+    font-size: 1.2rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+  }
+  
+  .swal2-title {
+    color: #6b6969f6;
+    font-size: 1.5rem;
+  }
+  
+  .swal2-content {
+    color: #6b6969f6;
+  }
+  
+  .swal2-styled.swal2-confirm {
+    background-color: #9f3647 ;
+    color: #ffffff ;
+    border-radius: 5px ;
+    width: 100%;
+  }

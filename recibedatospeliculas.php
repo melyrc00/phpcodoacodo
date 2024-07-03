@@ -1,3 +1,28 @@
+<?php
+
+if ($_POST) {
+
+
+// var_dump($_POST);
+$nombre = $_POST['titulopelicula'];
+$descripcion = $_POST['descripcion'];
+$genero = $_POST['genero'];
+$calificacion = $_POST['calificacion'];
+$aniopelicula = $_POST['aniopelicula'];
+$director = $_POST['director'];
+
+
+$peliculas = [
+
+  "titulo"=>$nombre,
+  "descripcion"=>$descripcion,
+  "genero"=>$genero,
+  "cantidadEstrellas"=>$calificacion,
+  "anio"=>$aniopelicula,
+  "director"=>$director
+];
+  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,29 +46,28 @@
                 <i class="fa-solid fa-film" style="color: #ffffff;"></i>
                 <p>CAC-Movies</p>
             </a>
-            <ul id="sec-nav-princ">
-                <a href="registrarse.html"><li>Registrarse</li></a>
-                <a href="iniciosesion.html"><li>Iniciar sesión</li></a>
-            </ul>
         </nav>
     </header>
-    <main id="registro-princ">
-        <form action="reciberegistro.php" class="animate__zoomIn" id="form_reg" method="post">
-            <h2>Registro</h2>
-            <input type="text" name="name" placeholder="Nombre" class="input-registro" required>
-            <input type="text" name="apellido" placeholder="Apellido" class="input-registro" required>
-            <input type="date" name="fecha-nacimiento" class="input-registro" required>
-            <input type="email" name="email" placeholder="Correo" class="input-registro" required>
-            <input type="password" name="password" placeholder="contraseña" size="8" class="input-registro" required>
-            <!-- <div class="checkbox"> -->
-            <!-- <input type="checkbox" id="terminos" required> -->
-            <!-- <label for="terminos" class="label-registro">Acepto términos y condiciones</label>
-            </div> -->
-            <div class="enviar-form">
-            <button href="reciberegistro.php" type="submit" class="boton-sec">Registrarse</button> 
+    <main id="registro-princ" class="section-buscador">
+        
+          
 
-            </div>
-        </form>
+
+      <h1>Pelicula registrada correctamente</h1>
+
+          <article class="animate__zoomIn" id="form_reg">
+
+            <h2>Título "<?php echo $peliculas["titulo"]?>"</h2>
+            <h3>Descripción "<?php echo $peliculas["descripcion"]?>"</h3>
+            <h3>Genero "<?php echo $peliculas["genero"]?>"</h3>
+            <h3>Calificacion "<?php echo $peliculas["cantidadEstrellas"]?>"</h3>
+            <h3>Año "<?php echo $peliculas["anio"]?>"</h3>
+            <h3>Director "<?php echo $peliculas["director"]?>"</h3>
+            <a href="administrar.html"><button class="boton-sec">Volver</button></a>
+
+          </article>
+
+
     </main>
     <footer class="nav-princ">
         <ul>
@@ -57,3 +81,16 @@
 
 </body>
 </html>
+  <?php
+
+
+
+}
+else {
+  echo "no hay datos";
+}
+
+
+
+
+  ?>

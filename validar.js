@@ -26,14 +26,17 @@ if(a ==='' || b ===''){
         icon: "error",
         title: "El formulario esta vacío",
         text: "Por favor verifica los campos",
+        confirmButtonText: 'OK'
+
       });
     e.preventDefault()
     } 
 else {
         Swal.fire({
-        title: "",
         text: "El formulario ha sido envíado",
         icon: "success",
+        confirmButtonText: 'OK'
+
      })
          
 
