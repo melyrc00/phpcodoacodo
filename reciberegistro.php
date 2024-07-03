@@ -3,7 +3,7 @@ $conexion = mysqli_connect("localhost", "id22387101_mrcpeliculas2024", "Naruto07
 if (mysqli_connect_errno()) {
     echo "ERROR no se conectó: " . mysqli_connect_error();
 } else {
-    echo "Se conectó de manera correcta";
+    // echo "Se conectó de manera correcta";
 }
 echo "<br>";
 // Insertar datos desde formulario de registro
@@ -20,31 +20,51 @@ if ($_POST) {
             $insertarDatos = "INSERT INTO usuarios (nombre, apellido, email, contraseña, fecha_nac) VALUES ('$nombre', '$apellido', '$correo', '$password', '$fechanac')";
 
                 if (mysqli_query($conexion, $insertarDatos)) {
-                    echo "Datos insertados correctamente";
-                    header("Location: reciberegistro.php");
+                    // echo "Datos insertados correctamente";
+
+                   // Obtener el ID del último registro insertado
+                   $ultimo_id = mysqli_insert_id($conexion);
+
+                   header("Location: reciberegistro.php?id=$ultimo_id");
+                   exit();
+
+
+
                 } else {
                     echo "Error ingresando datos: " . mysqli_error($conexion);
                 }
         } else {
             echo "Error: faltan datos del formulario o algunos campos están vacíos";
         }
-} else {
-    echo "Error: no se recibieron datos del formulario";
-}
+} 
+// else {
+//     echo "Error: no se recibieron datos del formulario";
+// }
 
 echo "<br>";
 
-// Consulta para mostrar los datos de usuarios
-$consultas = mysqli_query($conexion, "SELECT * FROM usuarios");
+// Mostrar datos del usuario recién registrado
+if (isset($_GET['id'])) {
+    // Obtener el ID del usuario registrado desde la URL
+    $id_usuario = $_GET['id'];
 
-// Verificar si la consulta fue exitosa
-if ($consultas) {
-    // Mostrar los resultados
-    while ($lista = mysqli_fetch_assoc($consultas)) {
-        // print_r ($lista);
-        // echo "<br>";
+    // Consulta para obtener los datos del usuario registrado
+    $consulta = mysqli_query($conexion, "SELECT * FROM usuarios WHERE id_usuarios = '$id_usuario'");
 
-        ?>
+    // Verificar si la consulta fue exitosa
+    if ($consulta) {
+        $lista = mysqli_fetch_assoc($consulta);
+    } else {
+        echo "Error en la consulta: " . mysqli_error($conexion);
+        exit();
+    }
+} 
+
+// Cerrar conexión a la base de datos
+mysqli_close($conexion);
+?>
+
+
 
 
         <!DOCTYPE html>
@@ -73,22 +93,22 @@ if ($consultas) {
                 </nav>
             </header>
             <main id="registro-princ" class="section-buscador">
-                
-                  
+            <h1>Usuario registrado correctamente</h1>
         
-        
-              <h1>Usuario registrado correctamente</h1>
-        
-                  <article class="animate__zoomIn" id="form_reg">
-        
-                    <h2>Nombre "<?php echo $lista?>"</h2>
+        <article class="animate__zoomIn" id="form_reg">
+   
+                    <h2>Nombre "<?php echo $lista["nombre"]?>"</h2>
+                    <h2>Apellido "<?php echo $lista["apellido"]; ?>"</h2>
+                    <h2>Email "<?php echo $lista["email"]; ?>"</h2>
+                    <h2>Fecha de Nacimiento "<?php echo $lista["fecha_nac"]; ?>"</h2>
 
                     <a href="index.html"><button class="boton-sec">Volver</button></a>
         
-                  </article>
-        
-        
-            </main>
+ 
+
+</article>
+
+</main>
             <footer class="nav-princ">
                 <ul>
                     <a href=""><li>Términos y condiciones</li></a>
@@ -103,16 +123,3 @@ if ($consultas) {
         </html>
         
 
-        <?php
-    }
-} else {
-    echo "Error en la consulta: " . mysqli_error($conexion);
-}
-
-echo "<br>";
-
-// Mostrar información del objeto de resultado
-var_dump($consultas);
-
-// Cerrar conexión a la base de datos
-mysqli_close($conexion);
