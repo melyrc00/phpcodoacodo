@@ -1,27 +1,52 @@
-<?php
+<?php ob_start();
+$conexion = mysqli_connect("localhost", "id22387101_mrcpeliculas2024", "Naruto07@", "id22387101_peliculas2024");
 
+if (mysqli_connect_errno()) {
+    echo "ERROR no se conectó: " . mysqli_connect_error();
+    exit();
+}
+
+// Insertar datos desde formulario de registro
 if ($_POST) {
+    // Verificar si las variables están definidas y no están vacías
+    if (isset($_POST['titulopelicula'], $_POST['descripcion'], $_POST['genero'], $_POST['calificacion'], $_POST['aniopelicula'], $_POST['director'])
+        && !empty($_POST['titulopelicula']) && !empty($_POST['descripcion']) && !empty($_POST['genero']) && !empty($_POST['calificacion']) && !empty($_POST['aniopelicula']) && !empty($_POST['director'])) {
 
+        $nombre = $_POST['titulopelicula'];
+        $descripcion = $_POST['descripcion'];
+        $genero = $_POST['genero'];
+        $calificacion = $_POST['calificacion'];
+        $aniopelicula = $_POST['aniopelicula'];
+        $director = $_POST['director'];
 
-// var_dump($_POST);
-$nombre = $_POST['titulopelicula'];
-$descripcion = $_POST['descripcion'];
-$genero = $_POST['genero'];
-$calificacion = $_POST['calificacion'];
-$aniopelicula = $_POST['aniopelicula'];
-$director = $_POST['director'];
+        $insertarDatos = "INSERT INTO movies (nombre, descripcion, genero, calificacion, año, director_id) VALUES ('$nombre', '$descripcion', '$genero', '$calificacion', '$aniopelicula', '$director')";
 
+        if (mysqli_query($conexion, $insertarDatos)) {
+            // Redirigir después de la inserción exitosa
+            header("Location: recibedatospeliculas.php");
+            exit();
+        } else {
+            echo "Error ingresando datos: " . mysqli_error($conexion);
+        }
+    } else {
+        echo "Error: faltan datos del formulario o algunos campos están vacíos";
+    }
+}
 
-$peliculas = [
+// Mostrar todas las películas registradas
+$consulta = mysqli_query($conexion, "SELECT * FROM movies");
 
-  "titulo"=>$nombre,
-  "descripcion"=>$descripcion,
-  "genero"=>$genero,
-  "cantidadEstrellas"=>$calificacion,
-  "anio"=>$aniopelicula,
-  "director"=>$director
-];
-  ?>
+if ($consulta) {
+    $peliculas = mysqli_fetch_all($consulta, MYSQLI_ASSOC);
+} else {
+    echo "Error en la consulta: " . mysqli_error($conexion);
+    exit();
+}
+
+mysqli_close($conexion);
+ob_end_flush();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,9 +59,7 @@ $peliculas = [
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d7f8f62978.js" crossorigin="anonymous"></script>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <title>CAC-MOVIES</title>
 </head>
 <body>
@@ -49,48 +72,58 @@ $peliculas = [
         </nav>
     </header>
     <main id="registro-princ" class="section-buscador">
-        
-          
+        <h1>Películas registradas</h1>
+
+        <article class="animate__zoomIn" id="form_reg">
 
 
-      <h1>Pelicula registrada correctamente</h1>
+              <table >
+                <thead>
 
-          <article class="animate__zoomIn" id="form_reg">
+                  <tr>
 
-            <h2>Título "<?php echo $peliculas["titulo"]?>"</h2>
-            <h3>Descripción "<?php echo $peliculas["descripcion"]?>"</h3>
-            <h3>Genero "<?php echo $peliculas["genero"]?>"</h3>
-            <h3>Calificacion "<?php echo $peliculas["cantidadEstrellas"]?>"</h3>
-            <h3>Año "<?php echo $peliculas["anio"]?>"</h3>
-            <h3>Director "<?php echo $peliculas["director"]?>"</h3>
-            <a href="administrar.html"><button class="boton-sec">Volver</button></a>
+                  
+                    <th >#</th>
+                    <th >Titulo</th>
+                    <th >Genero</th>
+                    <th >Año</th>
+                  </tr>
+                </thead>
+                <tbody>
 
-          </article>
+                <?php foreach ($peliculas as $lista): ?>
+                  <tr>
+                    <th><?php echo $lista['id_movie'] ?></th>
+                    <td><?php echo $lista['nombre'] ?></td>
+                    <td><?php echo $lista['genero'] ?></td>
+                    <td><?php echo $lista['año'] ?></td>
+                   
 
 
+
+                  </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+
+        </article>
+
+
+
+
+
+
+
+
+        <a href="administrar.html"><button class="boton-sec">Volver</button></a>
     </main>
     <footer class="nav-princ">
         <ul>
             <a href=""><li>Términos y condiciones</li></a>
             <a href=""><li>Preguntas frecuentes</li></a>
             <a href=""><li>Ayuda</li></a>
-            <a href="administrar.html"><li>Administrar peliculas</li></a>
+            <a href="administrar.html"><li>Administrar películas</li></a>
         </ul>
     </footer>
-
-
 </body>
 </html>
-  <?php
-
-
-
-}
-else {
-  echo "no hay datos";
-}
-
-
-
-
-  ?>

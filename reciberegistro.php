@@ -5,7 +5,7 @@ if (mysqli_connect_errno()) {
 } else {
     // echo "Se conectó de manera correcta";
 }
-echo "<br>";
+
 // Insertar datos desde formulario de registro
 if ($_POST) {
         // Verificar si las variables están definidas y no están vacías
@@ -41,7 +41,7 @@ if ($_POST) {
 //     echo "Error: no se recibieron datos del formulario";
 // }
 
-echo "<br>";
+
 
 // Mostrar datos del usuario recién registrado
 if (isset($_GET['id'])) {
@@ -93,14 +93,33 @@ mysqli_close($conexion);
             <h1>Usuario registrado correctamente</h1>
         
         <article class="animate__zoomIn" id="form_reg">
-   
-                    <h2>Nombre "<?php echo $lista["nombre"]?>"</h2>
-                    <h2>Apellido "<?php echo $lista["apellido"]; ?>"</h2>
-                    <h2>Email "<?php echo $lista["email"]; ?>"</h2>
-                    <h2>Fecha de Nacimiento "<?php echo $lista["fecha_nac"]; ?>"</h2>
 
-                    <a href="index.html"><button class="boton-sec">Volver</button></a>
-        
+        <table >
+                <thead>
+
+                  <tr>
+
+                  
+                    <th >Nombre</th>
+                    <th >Apellido</th>
+                    <th >Correo</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <th><?php echo $lista["nombre"]?></th>
+                    <td><?php echo $lista["apellido"]?></td>
+                    <td><?php echo $lista["email"]?></td>
+                   
+
+
+
+                  </tr>
+                </tbody>
+              </table>
+
+
  
 
 </article>

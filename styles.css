@@ -33,6 +33,7 @@
     flex-wrap: nowrap;
     justify-content: center;
     margin-top: 1rem;
+    text-align: center;
 }
 
 .nav-princ ul li {
@@ -50,6 +51,7 @@
     padding: 0.5rem;
     font-weight: 600;
     animation-duration: 2s;
+    text-align: center;
        /* si no le pongo duracion como si fuera kayframe no fucniona  */
 }
 
