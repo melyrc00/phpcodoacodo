@@ -1,16 +1,15 @@
 #registro-princ {
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     text-align: center;
     flex-direction: column;
     align-items: center;
-
-
 }
 
-#registro-princ h2, #registro-princ h3  {
-    margin-top: 1rem;
+#registro-princ h1, h2,
+#registro-princ h3 {
+    margin-top: 2rem;
 }
 
 h2 {
@@ -20,26 +19,14 @@ h2 {
 #form_reg {
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
-    justify-content: center;
-    width: 90vw;
-    align-content: center;
+    background-color: #2b2a2a;
+    animation-duration: 2s;
     margin: 80px 20px;
     padding: 32px;
-    /* border: #4e4e4e;
-    box-sizing: 0,2px;
-    border-style: solid;
-    border-radius: 6px; */
-    background-color: #2b2a2a;
-    animation-duration: 2s; 
-
 }
 
-
-
-.input-registro{
+.input-registro {
     background-color: #ffffff;
-    /* width: 80vw; */
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
     font-size: 1.2rem;
@@ -49,12 +36,11 @@ h2 {
 }
 
 ::placeholder {
-    color: #2e2c2e ;
-
+    color: #2e2c2e;
 }
 
 .input-registro option {
-    color: #2e2c2e ;
+    color: #2e2c2e;
 }
 
 .enviar-form {
@@ -69,7 +55,6 @@ h2 {
     margin-top: 2rem;
 }
 
-
 .boton-sec {
     border-radius: 8px;
     font-size: 1.2rem;
@@ -81,36 +66,28 @@ h2 {
     text-decoration: none;
 }
 
-.boton-sec:hover{
-    /* box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 1);
-    scale: 90% ; */
+.boton-sec:hover {
     background-color: #cea140;
-    color: #181419 ;
+    color: #181419;
     font-weight: 800;
 }
 
-
 .nav-princ table {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    font-size: .8rem;
     text-align: center;
 }
 
-
-
-
-/* Medium devices (768px and up) */
-
 @media only screen and (min-width: 768px) {
-/* 
-#registro-princ form {
-
-        width: 50vw;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    } */
-
-    #form_reg  {
+    #form_reg {
         width: 40vw;
-
     }
+}
+@media only screen and (min-width: 1440px){
+    table {
+        font-size: 12px;
+}
 }

@@ -1,16 +1,17 @@
 <?php ob_start();
 $conexion = mysqli_connect("localhost", "id22387101_mrcpeliculas2024", "Naruto07@", "id22387101_peliculas2024");
 
-if (mysqli_connect_errno()) {
-    echo "ERROR no se conectó: " . mysqli_connect_error();
-    exit();
-}
-
-// Insertar datos desde formulario de registro
 if ($_POST) {
-    // Verificar si las variables están definidas y no están vacías
-    if (isset($_POST['titulopelicula'], $_POST['descripcion'], $_POST['genero'], $_POST['calificacion'], $_POST['aniopelicula'], $_POST['director'])
-        && !empty($_POST['titulopelicula']) && !empty($_POST['descripcion']) && !empty($_POST['genero']) && !empty($_POST['calificacion']) && !empty($_POST['aniopelicula']) && !empty($_POST['director'])) {
+    if (mysqli_connect_errno()) {
+        echo "ERROR no se conectó: " . mysqli_connect_error();
+        exit();
+    }
+
+    // Insertar datos desde formulario de registro
+    if (
+        isset($_POST['titulopelicula'], $_POST['descripcion'], $_POST['genero'], $_POST['calificacion'], $_POST['aniopelicula'], $_POST['director'])
+        && !empty($_POST['titulopelicula']) && !empty($_POST['descripcion']) && !empty($_POST['genero']) && !empty($_POST['calificacion']) && !empty($_POST['aniopelicula']) && !empty($_POST['director'])
+    ) {
 
         $nombre = $_POST['titulopelicula'];
         $descripcion = $_POST['descripcion'];
@@ -32,10 +33,25 @@ if ($_POST) {
         echo "Error: faltan datos del formulario o algunos campos están vacíos";
     }
 }
+// Verificar si se ha enviado el formulario de eliminación
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id_movie'])) {
+    $id = $_GET['id_movie'];
 
+    // Preparar consulta SQL para eliminar película
+    $sql_eliminar = "DELETE FROM movies WHERE id_movie = $id";
+
+    // Ejecutar consulta SQL
+    if (mysqli_query($conexion, $sql_eliminar)) {
+        echo "<script>alert('Película eliminada correctamente.');</script>";
+        // Redirigir de nuevo a la página principal después de la eliminación
+        echo "<script>window.location.href = 'recibedatospeliculas.php';</script>";
+        exit();
+    } else {
+        echo "Error al eliminar película: " . mysqli_error($conexion);
+    }
+}
 // Mostrar todas las películas registradas
 $consulta = mysqli_query($conexion, "SELECT * FROM movies");
-
 if ($consulta) {
     $peliculas = mysqli_fetch_all($consulta, MYSQLI_ASSOC);
 } else {
@@ -43,9 +59,11 @@ if ($consulta) {
     exit();
 }
 
+// Obtener la última película registrada
+$ultimaPelicula = end($peliculas);
+
 mysqli_close($conexion);
 ob_end_flush();
-
 ?>
 
 <!DOCTYPE html>
@@ -97,7 +115,7 @@ ob_end_flush();
                     <td><?php echo $lista['nombre'] ?></td>
                     <td><?php echo $lista['genero'] ?></td>
                     <td><?php echo $lista['año'] ?></td>
-                   
+                    <td><a href="recibedatospeliculas.php?id_movie=<?php echo $lista['id_movie']; ?>">Eliminar</a></td>
 
 
 
